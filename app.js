@@ -13,7 +13,7 @@ app.use(express.static('./public'));
 var password = "abc";
 
 //connect to mongo
-mongo.connect('mongodb://127.0.0.1/mydb', function(err, client){
+mongo.connect('mongodb://admin:admin12@ds129811.mlab.com:29811/mydb', function(err, client){
 	if(err){ 
 		throw err;
 	}
