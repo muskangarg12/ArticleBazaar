@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+	<title>Comment section</title>
+
+	<style type="text/css">
+		body{
+		font-family: 'PT Serif', cursive;
+		background: #FFFFE0;
+	}
+
+	.bg-cover {
+    background-image: url('/comment.jpg');
+ 	background-size: cover;
+	color: white;
+	background-position: center center;
+	position: relative;
+	z-index: -2;
+}
+
+.overlay {
+  background-color: #000;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+	.border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+    .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .2); }
+
+    .text-white-50 { color: rgba(255, 255, 255, .5); }
+    .lh-100 { line-height: 1; }
+    .lh-125 { line-height: 1.25; }
+    .lh-150 { line-height: 1.5; }
+
+		/*
+		 * Footer
+		 */
+		.blog-footer {
+		  padding: 2.5rem 0;
+		  color: #999;
+		  text-align: center;
+		  background-color: #f9f9f9;
+		  border-top: .05rem solid #e5e5e5;
+		}
+		.blog-footer p:last-child {
+		  margin-bottom: 0;
+		}
+
+		#navbarCollapse{
+      float: right;
+    }
+
+	</style>
+
+</head>
+<body>
+
+	<header>
+	  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+	    <a class="navbar-brand" href="/"><img src="/png/002-cart.png"><strong>  ArticleBazaar</strong></a>
+	        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="navbar-toggler-icon"></span>
+	        </button>
+
+	        <div class="collapse navbar-collapse" id="navbarCollapse">
+
+	          <ul class="navbar-nav mr-auto nav justify-content-end">
+	            <li class="nav-item ">
+	              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link" href="/about">About</a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link" href="/contact">Contact</a>
+	            </li>
+	            <li class="nav-item">
+                <a class="nav-link" href="/all-articles">Articles</a>
+              </li>
+	          </ul>
+
+	        </div>
+	  </nav>
+	</header>
+
+  <div class="jumbotron jumbotron-fluid bg-cover">
+  	<div class="overlay"></div>
+  <br><br><br>
+  <div class="container ">
+    <h1 class="display-4">COMMENTS</h1>
+    <p class="lead">Add comments and let us know your views and also share if you have some specific topics on which you want an article to be written.</p>
+  </div>
+	</div>
+	<br>
+
+	<div class="my-3 p-3 bg-white rounded box-shadow container" id="recents">
+        <h6 class="border-bottom border-gray pb-2 mb-0">All Comments</h6><br>
+        <div class="form-group">
+    <form action="/comment" method="POST">
+        <textarea class="form-control" placeholder="Add Comment..." rows="2" name="comment"></textarea>
+        <div class="form-row align-items-center">
+        <div class="col-md-3 my-1">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">@</div>
+        </div>
+        <input type="text" class="form-control" name="username" placeholder="Username">
+      </div>
+    </div>
+  
+    <div class="col-auto my-1">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+    </form>
+  </div><hr>
+        <% for(var i=comments.length-1; i>=0 ; i--){ %>
+        <div class="media text-muted pt-3 border-bottom border-gray">
+          <img src="/png/user.png" alt="" class="mr-2 rounded">
+          <p class="media-body pb-3 mb-0 small lh-125 ">
+            <strong class="d-block text-gray-dark">@<%= comments[i].username %></strong>
+           <%= comments[i].comment %> 
+          </p>
+        </div>
+        <% } %>
+
+        <blockquote></blockquote>
+
+    </div>
+	<br><br><br><br>
+
+
+	<footer class="blog-footer">
+      <p ><a href="#">Back to top</a></p>
+      <p>&copy; 2018-2019 ArticleBazaar Company, Inc.</p>
+    </footer>
+
+</body>
+</html>

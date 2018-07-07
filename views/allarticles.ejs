@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+	<title>All Articles</title>
+
+	<style type="text/css">
+		body{
+		font-family: 'PT Serif', cursive;
+		background: #FFFFE0;
+	}
+
+	.card{
+		margin-bottom: 20px;
+	}
+	.border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+    .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+    .text-white-50 { color: rgba(255, 255, 255, .5); }
+    .lh-100 { line-height: 1; }
+    .lh-125 { line-height: 1.25; }
+    .lh-150 { line-height: 1.5; }
+
+		/*
+		 * Footer
+		 */
+		.blog-footer {
+		  padding: 2.5rem 0;
+		  color: #999;
+		  text-align: center;
+		  background-color: #f9f9f9;
+		  border-top: .05rem solid #e5e5e5;
+		}
+		.blog-footer p:last-child {
+		  margin-bottom: 0;
+		}
+
+		#navbarCollapse{
+      float: right;
+    }
+
+    .bg-cover {
+    	background-image: url('/cover3.jpg');
+		  background-size: cover;
+		  color: white;
+		  background-position: center center;
+		  position: relative;
+		  z-index: -2;
+	}
+
+.overlay {
+  background-color: #000;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+	#sidebar{
+		padding-top: 10px;
+		padding-bottom: 10px;
+		border-radius: 10px;
+		border: 1px solid grey;
+		background: lightblue;
+		text-align: center;
+	}
+
+	</style>
+
+</head>
+<body>
+
+	<header>
+	  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+	    <a class="navbar-brand" href="/"><img src="/png/002-cart.png"><strong>  ArticleBazaar</strong></a>
+	        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="navbar-toggler-icon"></span>
+	        </button>
+
+	        <div class="collapse navbar-collapse" id="navbarCollapse">
+
+	          <ul class="navbar-nav mr-auto nav justify-content-end">
+	            <li class="nav-item ">
+	              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link" href="/about">About</a>
+	            </li>
+	            <li class="nav-item">
+	              <a class="nav-link" href="/contact">Contact</a>
+	            </li>
+	            <li class="nav-item">
+                <a class="nav-link active" href="/all-articles">Articles</a>
+              </li>
+	          </ul>
+
+	        </div>
+	  </nav>
+	</header>
+
+  <div class="jumbotron jumbotron-fluid bg-cover">
+  <div class="overlay"></div>	
+  <br><br><br>
+  <div class="container ">
+    <h1 class="display-4">All Articles</h1>
+    <p class="lead"><strong>"An article contains 200-250 words, but can influence 200-250 Millions !" .</strong>We have many such influencing articles in this section. Do read all and give us your feedback !!</p>
+  </div>
+	</div>
+	<br><br>
+
+	<div class="container">
+		<h2><strong>All Articles</strong></h2><hr>
+		<div class="row">
+		<div class="col-md-9" style="padding-right: 30px">
+		<% for(var i=articles.length-1; i>=0; i--){ %>
+			  <a href="/Category/<%= articles[i].category %>" style="text-decoration-line: none"><strong class="d-inline-block mb-2 text-danger"><%= articles[i].category %></strong></a>
+			  <h3><%= articles[i].title %></h3>
+			  <div class="mb-1 text-muted">by Nikunj Jain</div>
+			      <p><%- articles[i].content.substr(0, 200)%>... </p>
+			      	<a href="/articles/<%= articles[i].title.split(' ').join('-') %> " style="text-decoration-line: none"> continue reading</a>
+			     
+			      <hr>
+		<% } %>
+		</div>
+		<div class="col-md-3">
+			<div id="sidebar" >
+			<h4>Categories</h4><hr style="margin: 0">
+				<a class="nav-link p-2 text-muted" href="/category/Entertainment">Entertainment</a><hr style="margin: 0">
+				<a class="nav-link p-2 text-muted" href="/category/Sports">Sports</a><hr style="margin: 0">
+				<a class="nav-link p-2 text-muted" href="/category/Technology">Technology</a><hr style="margin: 0">
+				<a class="nav-link p-2 text-muted" href="/category/Culture">Culture</a><hr style="margin: 0">
+				<a class="nav-link p-2 text-muted" href="/category/Business">Business</a><hr style="margin: 0">
+				<a class="nav-link p-2 text-muted" href="/category/Politics">Politics</a><hr style="margin: 0">
+				<a class="nav-link p-2 text-muted" href="/category/Travel">Travel</a><hr style="margin: 0">
+		</div>
+		</div>
+		</div>
+	</div>
+	<br><br>
+
+	<footer class="blog-footer">
+      <p ><a href="#">Back to top</a></p>
+      <p>&copy; 2018-2019 ArticleBazaar Company, Inc.</p>
+    </footer>
+
+</body>
+</html>

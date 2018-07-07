@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  <title> Articles </title>
+
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  
+  <style type="text/css">
+    
+    body {
+      background: #FFFFE0;
+      font-family: 'PT Serif', cursive;
+      padding-top: 3rem;
+      color: #5a5a5a;
+    }
+
+    #navbarCollapse{
+      float: right;
+    }
+
+    /* Since positioning the image, we need to help out the caption */
+    .carousel-caption {
+      bottom: 3rem;
+      z-index: 10;
+    }
+
+    /* Declare heights because of positioning of img element */
+    .carousel-item {
+      height: 400px;
+      margin-bottom: 0;
+      background-color: #777;
+    }
+
+    .corousal-inner{
+      padding-bottom: 0;
+    }
+
+    .carouselbox {
+      height: 10px;
+    }
+
+    .carousel-item > img {
+      background-color: #000;
+      bottom: 0;
+      right: 0;
+      z-index: -1;
+      opacity: 0.6;
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 32rem;
+    }
+
+    @media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-family: 'PT Serif', cursive;
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+  .nav-scroller{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #E6E6FA;
+    padding-left: 100px;
+    padding-right: 100px; 
+  }
+
+    .featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+}
+
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+    /*
+     * Footer
+     */
+    .blog-footer {
+      padding: 2.5rem 0;
+      color: #999;
+      text-align: center;
+      background-color: #f9f9f9;
+      border-top: .05rem solid #e5e5e5;
+    }
+    .blog-footer p:last-child {
+      margin-bottom: 0;
+    }
+
+    .bg-purple { background-color: #6f42c1; }
+    .border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+    .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .2); }
+
+    .text-white-50 { color: rgba(255, 255, 255, .5); }
+    .lh-100 { line-height: 1; }
+    .lh-125 { line-height: 1.25; }
+    .lh-150 { line-height: 1.5; }
+
+   
+
+     
+  .card-img-right {
+  height: 100%;
+  width: 100%;
+  border-radius: 0 3px 3px 0;
+}
+
+.flex-auto {
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.h-250 { height: 250px; }
+@media (min-width: 768px) {
+  .h-md-250 { height: 250px; }
+}
+
+.card{
+  height: 300px;
+}
+
+.card-body{
+  padding: 40px 20px;
+}
+
+  </style>
+
+
+</head>
+<body>
+  
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="/"><img src="/png/002-cart.png"><strong>  ArticleBazaar</strong></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+
+            <ul class="navbar-nav mr-auto nav justify-content-end">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/all-articles">Articles</a>
+              </li>
+            </ul>
+
+          </div>
+    </nav>
+  </header>
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner">
+      
+      <div class="carousel-item active bg-cover">
+        <img class="first-slide" src="/authorwriting.jpg" alt="First slide">
+        <div class="container carouselbox">
+          <div class="carousel-caption text-left">
+            <h1>Welcome everyone !!</h1>
+              <p class="lead">" This website is just an addition to one of those hundreds of websites made everyday, the only difference you will find is that this website will make you develop a connection through the words, phrases, sentences in the content which are a part of my thoughts. With due respect and love , Folks !! welcome to not my , but your “ArticleBazaar”. "<br>     -- Nikunj Jain</p>
+              <p><a class="btn btn-lg btn-primary" href="/all-articles" role="button">All Articles</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img class="second-slide" src="/technology3.jpg" alt="Second slide">
+          <div class="container carouselbox">
+            <div class="carousel-caption">
+              <h1>Latest News Headlines.</h1>
+              <p class="lead">Read everyday's latest news about whats happening around you and keep yourself updated with <b>Articlebazaar</b>'s news headlines section. </p>
+              <p><a class="btn btn-lg btn-primary" href="#news" role="button">News Headlines</a></p>
+            </div>
+          </div>
+      </div>
+
+      <div class="carousel-item">
+        <img class="third-slide" src="/cover3.jpg" alt="Third slide">
+        <div class="container carouselbox">
+          <div class="carousel-caption text-right">
+            <h1>Share your feedback.</h1>
+            <p class="lead">Dont forget to share your feedback with us. If you have any queries, requests or ideas then do share with us in the comment section below.</p>
+            <p><a class="btn btn-lg btn-primary" href="#comments" role="button">Comment</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  
+
+  <div class="nav-scroller">
+  <ul class="nav d-flex justify-content-between">
+    <li class="nav-item ">
+      <img src="/png/007-video-camera.png">
+      <a class="nav-link p-2 text-muted" href="/category/Entertainment"><strong>Entertainment</strong></a>
+    </li>
+    <li class="nav-item">
+      <img src="/png/001-award.png">
+      <a class="nav-link p-2 text-muted" href="/category/Sports"><strong>Sports</strong></a>
+    </li>
+    <li class="nav-item">
+      <img src="/png/006-instagram.png">
+      <a class="nav-link p-2 text-muted" href="/category/Technology"><strong>Technology</strong></a>
+    </li>
+    <li class="nav-item">
+      <img src="/png/005-islam.png">
+      <a class="nav-link p-2 text-muted" href="/category/Culture"><strong>Culture</strong></a>
+    </li>
+    <li class="nav-item">
+      <img src="/png/004-startup.png">
+      <a class="nav-link p-2 text-muted" href="/category/Business"><strong>Business</strong></a>
+    </li>
+    <li class="nav-item">
+      <img src="/png/002-vote.png">
+      <a class="nav-link p-2 text-muted" href="/category/Politics"><strong>Politics</strong></a>
+    </li>
+    <li class="nav-item">
+      <img src="/png/003-travel.png">
+      <a class="nav-link p-2 text-muted" href="/category/Travel"><strong>Travel</strong></a>
+    </li>
+  </ul>
+  </div>
+
+    <br><br><br>
+  <div style="margin: 0 80px">
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h1 style="padding-left: 20px">Recent Articles</h1><hr><br>
+    <% for( var x=1,i=articles.length-1;i>=((articles.length>4)?(articles.length-4):0); i--, x++){ %>
+          
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="col-md-8">
+            <div class="card-body d-flex flex-column align-items-start">
+              <a href="/Category/<%= articles[i].category %>" style="text-decoration-line: none"><strong class="d-inline-block mb-2 text-danger"><%= articles[i].category %></strong></a>
+              <h3 class="mb-0">
+                <a class="text-dark" href="/articles/<%= articles[i].title.split(' ').join('-') %>" style="text-decoration-line: none"><%= articles[i].title %></a>
+              </h3>
+              <div class="mb-1 text-muted">by Nikunj Jain</div>
+              <% if(articles[i].content){ %>
+              <p class="card-text mb-auto"><%- articles[i].content.substr(0,200) %>...</p>
+              
+              <br>
+              <a href="/articles/<%= articles[i].title.split(' ').join('-') %>" style="text-decoration-line: none">Continue reading</a>
+              <% } %>
+          </div>
+        </div>
+          <div class="col-md-4" style="padding: 0">
+            <img class="card-img-right flex-auto d-none d-lg-block"src="/image<%= x %>.jpg" alt="Card image cap" >
+          </div>
+        </div>
+      <% } %><hr>
+      <div class="d-block text-right mt-3">
+          <a href="/all-articles" style="text-decoration-line: none"><strong>All Articles</strong></a>
+      </div>
+      </div>
+
+      <div class="col-md-4" id="news">
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-info">NEWS HEADLINES</li>
+          <% for( var i=0 ; i< news.length ; i++){ %>
+          <li class="list-group-item list-group-item-warning" ><%- news[i].headline %></li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+    <br>
+<hr>
+  <br><br>
+
+  <div class="col-md-8" id="comments" style="padding: 0">
+    <h2 style="padding-left: 10px">Comments</h2><hr>
+  <div class="my-3 p-3 bg-white rounded box-shadow  justify-content-centers" id="recents" >
+        <h6 class="border-bottom border-gray pb-2 mb-0">Recent comments</h6>
+        <% for(var i=comments.length-1; i>=((comments.length>5)?(comments.length-5):0); i--){ %>
+        <div class="media text-muted pt-3 border-bottom border-gray">
+          <img src="/png/user.png" alt="" class="mr-2 rounded">
+          <p class="media-body pb-3 mb-0 small lh-125 ">
+            <strong class="d-block text-gray-dark">@<%= comments[i].username %></strong>
+           <%= comments[i].comment %> 
+          </p>
+        </div>
+        <% } %>     
+     
+  <blockquote></blockquote>
+
+  <div class="form-group">
+    <form action="/comment" method="POST">
+        <textarea class="form-control" placeholder="Add Comment..." rows="2" name="comment"></textarea>
+        <div class="form-row align-items-center">
+        <div class="col-md-3 my-1">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">@</div>
+        </div>
+        <input type="text" class="form-control" name="username" placeholder="Username">
+      </div>
+    </div>
+  
+    <div class="col-auto my-1">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+    </form>
+  </div>
+  <hr>
+
+  <small class="d-block text-right mt-3">
+          <a href="/comments" style="text-decoration-line: none">All comments</a>
+  </small>
+  </div>
+</div>
+  
+  <br><br><br>
+  <!-- FOOTER -->
+  <footer class="blog-footer">
+     <p ><a href="#">Back to top</a></p>
+      <p>&copy; 2018-2019 ArticleBazaar Company, Inc.</p>
+  </footer>
+</body>
+</html>
