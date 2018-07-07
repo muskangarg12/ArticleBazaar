@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 
 app.use(express.static('./public'));
-var password = "entrepreneur12";
+var password = "entrepreneur";
 
 //connect to mongo
 mongo.connect('mongodb://admin:admin12@ds129811.mlab.com:29811/mydb', function(err, client){
