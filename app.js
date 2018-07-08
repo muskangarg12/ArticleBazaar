@@ -143,7 +143,7 @@ mongo.connect('mongodb://admin:admin12@ds129811.mlab.com:29811/mydb', function(e
 	});
 
 	app.listen(port);
-	console.log('You are listening to port 3000');
+	//console.log('You are listening to port 3000');
 
 });
 
