@@ -298,9 +298,11 @@
             <div class="col-md-8">
             <div class="card-body d-flex flex-column align-items-start">
               <a href="/Category/<%= articles[i].category %>" style="text-decoration-line: none"><strong class="d-inline-block mb-2 text-danger"><%= articles[i].category %></strong></a>
+              <div class="container" style="padding: 0">
               <h3 class="mb-0">
                 <a class="text-dark" href="/articles/<%= articles[i].title.split(' ').join('-') %>" style="text-decoration-line: none"><%= articles[i].title %></a>
               </h3>
+            </div>
               <div class="mb-1 text-muted">by Nikunj Jain</div>
               <% if(articles[i].content){ %>
               <p class="card-text mb-auto"><%- articles[i].content.substr(0,200) %>...</p>
