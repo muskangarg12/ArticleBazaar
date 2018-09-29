@@ -13,7 +13,7 @@ app.use(express.static('./public'));
 var password = process.env.PASSWORD ; // make your own password
 
 //connect to mongo
-mongo.connect('mongodb://admin:admin12@ds129811.mlab.com:29811/mydb', function(err, client){
+mongo.connect('mongodb://xxxxxxxxxxxxxxxxxxx/mydb', function(err, client){
 	if(err){ 
 		throw err;
 	}
