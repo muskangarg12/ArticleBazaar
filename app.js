@@ -25,8 +25,8 @@ mongo.connect('mongodb://xxxxxxxxxxxxxxxxxxx/mydb', function(err, client){
 
 	app.get('/', function(req, res){
 
-		comments.find().toArray(function(err, comment){
-			articles.find().toArray(function(err, article){
+		comments.find().toArray(function(err, comment){                    //dbo.collection("customers").find({}, { projection: { _id: 0, name: 1, address: 1 } })
+			articles.find().toArray(function(err, article){		   // 0-to exclude 1-to include  
 				news.find().toArray(function(err, news){
 					if (err)
 						throw err;
